@@ -1,0 +1,19 @@
+# Compiled Java artifacts
+*.class
+*.log
+hs_err_pid*
+
+# Build output
+/target/
+/build/
+/out/
+/.gradle/
+
+# IDE metadata
+/.idea/
+*.iml
+/.classpath
+/.project
+/.settings/
+/.metadata/
+/.nbproject/private/
