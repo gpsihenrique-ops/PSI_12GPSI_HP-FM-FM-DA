@@ -1,13 +1,12 @@
 
 import org.junit.jupiter.api.Test;
 
-import epbjc.psi.Barco;
-import epbjc.psi.Carro;
-import epbjc.psi.Garagem;
-import epbjc.psi.Mota;
-import epbjc.psi.Veiculo;
-import epbjc.psi.TipoVeiculo;
-
+import epbjc.psi.Model.Barco;
+import epbjc.psi.Model.Carro;
+import epbjc.psi.Model.Garagem;
+import epbjc.psi.Model.Mota;
+import epbjc.psi.Model.TipoVeiculo;
+import epbjc.psi.Model.Veiculo;
 
 import static org.junit.jupiter.api.Assertions.*;
 

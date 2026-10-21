@@ -1,12 +1,12 @@
 package epbjc.psi.controller;
 
-import epbjc.psi.Barco;
-import epbjc.psi.Carro;
-import epbjc.psi.Garagem;
-import epbjc.psi.GeradorMatriculas;
-import epbjc.psi.Mota;
-import epbjc.psi.TipoVeiculo;
-import epbjc.psi.Veiculo;
+import epbjc.psi.Model.Barco;
+import epbjc.psi.Model.Carro;
+import epbjc.psi.Model.Garagem;
+import epbjc.psi.Model.GeradorMatriculas;
+import epbjc.psi.Model.Mota;
+import epbjc.psi.Model.TipoVeiculo;
+import epbjc.psi.Model.Veiculo;
 
 public class GaragemController {
 

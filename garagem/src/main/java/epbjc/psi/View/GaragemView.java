@@ -1,48 +1,36 @@
-package epbjc.psi.View;
 
-import epbjc.psi.Garagem;
-import epbjc.psi.Veiculo;
+package epbjc.psi.view;
+
+import java.util.Scanner;
 
 public class GaragemView {
 
-    public void mostrarGaragem(Garagem garagem) {
+    private final Scanner scanner = new Scanner(System.in);
 
-        System.out.println();
-        System.out.println("========================================");
-        System.out.println("              GARAGEM");
-        System.out.println("========================================");
+    public void mostrarMenu() {
+        System.out.println("\n==============================");
+        System.out.println("       SISTEMA DE GARAGEM");
+        System.out.println("==============================");
+        System.out.println("1 - Gerir carros");
+        System.out.println("2 - Gerir motas");
+        System.out.println("3 - Gerir barcos");
+        System.out.println("4 - Consultar veículos");
+        System.out.println("0 - Sair");
+        System.out.println("==============================");
+        System.out.print("Escolha uma opção: ");
+    }
 
-        System.out.println("Nome: " + garagem.getNome());
-        System.out.println("Ocupação: " + garagem.getOcupacao()
-                + "/" + garagem.getCapacidade());
-        System.out.println("Lugares livres: " + garagem.getLugaresLivres());
-
-        System.out.println("----------------------------------------");
-
-        if (garagem.isVazia()) {
-            System.out.println("A garagem está vazia.");
-        } else {
-
-            int numero = 1;
-
-            for (Veiculo veiculo : garagem.getVeiculos()) {
-
-                System.out.println(
-                        numero + ". "
-                        + veiculo.getTipo()
-                        + " | Matrícula: "
-                        + veiculo.getMatricula()
-                        + " | "
-                        + veiculo.getMarca()
-                        + " " + veiculo.getModelo()
-                        + " | Ano: " + veiculo.getAno()
-                );
-
-                numero++;
-            }
+    public int lerOpcao() {
+        while (!scanner.hasNextInt()) {
+            System.out.println("Opção inválida!");
+            scanner.next();
+            System.out.print("Escolha uma opção: ");
         }
 
-        System.out.println("========================================");
-        System.out.println();
+        return scanner.nextInt();
+    }
+
+    public void mostrarMensagem(String mensagem) {
+        System.out.println(mensagem);
     }
 }

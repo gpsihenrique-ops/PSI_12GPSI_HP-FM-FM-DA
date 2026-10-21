@@ -1,4 +1,4 @@
-package epbjc.psi;
+package epbjc.psi.Model;
 
 public interface Veiculo {
 

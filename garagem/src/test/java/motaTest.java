@@ -3,7 +3,7 @@
 
 import org.junit.jupiter.api.Test;
 
-import epbjc.psi.Mota;
+import epbjc.psi.Model.Mota;
 
 import static org.junit.jupiter.api.Assertions.*;
 

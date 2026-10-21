@@ -3,7 +3,7 @@
 
 import org.junit.jupiter.api.Test;
 
-import epbjc.psi.GeradorMatriculas;
+import epbjc.psi.Model.GeradorMatriculas;
 
 import static org.junit.jupiter.api.Assertions.*;
 

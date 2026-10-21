@@ -3,7 +3,7 @@
 
 import org.junit.jupiter.api.Test;
 
-import epbjc.psi.TipoVeiculo;
+import epbjc.psi.Model.TipoVeiculo;
 
 import static org.junit.jupiter.api.Assertions.*;
 

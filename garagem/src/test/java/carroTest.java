@@ -3,7 +3,7 @@
 
 import org.junit.jupiter.api.Test;
 
-import epbjc.psi.Carro;
+import epbjc.psi.Model.Carro;
 
 import static org.junit.jupiter.api.Assertions.*;
 

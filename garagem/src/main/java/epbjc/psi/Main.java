@@ -1,6 +1,11 @@
 package epbjc.psi;
 
-import epbjc.psi.View.GaragemView;
+import epbjc.psi.Model.Barco;
+import epbjc.psi.Model.Carro;
+import epbjc.psi.Model.Garagem;
+import epbjc.psi.Model.GaragemView;
+import epbjc.psi.Model.Mota;
+import epbjc.psi.Model.TipoVeiculo;
 
 public class Main {
 

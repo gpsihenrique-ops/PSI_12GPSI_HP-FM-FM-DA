@@ -3,8 +3,8 @@
 
 import org.junit.jupiter.api.Test;
 
-import epbjc.psi.Barco;
-import epbjc.psi.TipoVeiculo;
+import epbjc.psi.Model.Barco;
+import epbjc.psi.Model.TipoVeiculo;
 
 import static org.junit.jupiter.api.Assertions.*;
 

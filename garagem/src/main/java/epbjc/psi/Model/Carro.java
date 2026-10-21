@@ -1,10 +1,10 @@
 
-package epbjc.psi;
+package epbjc.psi.Model;
 
 import java.time.Year;
 import java.util.Objects;
 
-public class Mota implements Veiculo {
+public class Carro implements Veiculo {
 
     private static final int ANO_MINIMO = 1886;
     private static final String REGEX_MATRICULA =
@@ -17,19 +17,21 @@ public class Mota implements Veiculo {
     private String modelo;
     private String cor;
     private double quilometros;
-    private int cilindrada;
+    private int numeroLugares;
 
-    public Mota(String matricula, String marca, String modelo,
-                String cor, int ano, int cilindrada) {
+    public Carro(String matricula, String marca, String modelo,
+                 String cor, int ano, int numeroLugares) {
 
         this.matricula = validarMatricula(matricula);
         this.ano = validarAno(ano);
+
         this.marca = validarTexto(marca, "Marca");
         this.modelo = validarTexto(modelo, "Modelo");
         this.cor = validarTexto(cor, "Cor");
 
-        validarCilindrada(cilindrada);
-        this.cilindrada = cilindrada;
+        validarNumeroLugares(numeroLugares);
+        this.numeroLugares = numeroLugares;
+
         this.quilometros = 0;
     }
 
@@ -38,13 +40,13 @@ public class Mota implements Veiculo {
             throw new IllegalArgumentException("Matrícula inválida");
         }
 
-        String normalizada = matricula.trim().toUpperCase();
+        String matriculaNormalizada = matricula.trim().toUpperCase();
 
-        if (!normalizada.matches(REGEX_MATRICULA)) {
+        if (!matriculaNormalizada.matches(REGEX_MATRICULA)) {
             throw new IllegalArgumentException("Matrícula inválida");
         }
 
-        return normalizada;
+        return matriculaNormalizada;
     }
 
     private static String validarTexto(String valor, String campo) {
@@ -65,15 +67,17 @@ public class Mota implements Veiculo {
         return ano;
     }
 
-    private static void validarCilindrada(int cilindrada) {
-        if (cilindrada <= 0) {
-            throw new IllegalArgumentException("Cilindrada inválida");
+    private static void validarNumeroLugares(int numeroLugares) {
+        if (numeroLugares < 1 || numeroLugares > 9) {
+            throw new IllegalArgumentException(
+                    "Número de lugares inválido"
+            );
         }
     }
 
     @Override
     public TipoVeiculo getTipo() {
-        return TipoVeiculo.MOTA;
+        return TipoVeiculo.CARRO;
     }
 
     @Override
@@ -92,13 +96,13 @@ public class Mota implements Veiculo {
     }
 
     @Override
-    public String getCor() {
-        return cor;
+    public int getAno() {
+        return ano;
     }
 
     @Override
-    public int getAno() {
-        return ano;
+    public String getCor() {
+        return cor;
     }
 
     @Override
@@ -108,11 +112,11 @@ public class Mota implements Veiculo {
 
     @Override
     public int getNumeroRodas() {
-        return 2;
+        return 4;
     }
 
-    public int getCilindrada() {
-        return cilindrada;
+    public int getNumeroLugares() {
+        return numeroLugares;
     }
 
     public void setMarca(String marca) {
@@ -127,19 +131,20 @@ public class Mota implements Veiculo {
         this.cor = validarTexto(cor, "Cor");
     }
 
-    public void setCilindrada(int cilindrada) {
-        validarCilindrada(cilindrada);
-        this.cilindrada = cilindrada;
-    }
-
     public void setQuilometros(double quilometros) {
-        if (!Double.isFinite(quilometros)
+        if (Double.isNaN(quilometros)
+                || Double.isInfinite(quilometros)
                 || quilometros < 0
                 || quilometros < this.quilometros) {
             throw new IllegalArgumentException("Quilómetros inválidos");
         }
 
         this.quilometros = quilometros;
+    }
+
+    public void setNumeroLugares(int numeroLugares) {
+        validarNumeroLugares(numeroLugares);
+        this.numeroLugares = numeroLugares;
     }
 
     @Override

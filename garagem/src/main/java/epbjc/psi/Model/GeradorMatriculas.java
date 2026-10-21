@@ -1,4 +1,4 @@
-package epbjc.psi;
+package epbjc.psi.Model;
 
 import java.util.HashSet;
 import java.util.Set;
